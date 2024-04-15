@@ -1,0 +1,20 @@
+.container{
+    padding: 0 10%;
+}
+
+.navbar{
+    justify-content: space-around;
+    color: white;
+    background-color: rgb(52, 49, 49);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.nav > ul{
+    column-gap: 10px;
+}
+.navLinks{
+    list-style: none;
+    column-gap: 4px;
+}
