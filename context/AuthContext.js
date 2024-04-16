@@ -14,6 +14,8 @@ export const AuthProvider = ({children})=>{
     function login(token, name){
         setToken(token);
         setName(name);
+        sessionStorage.setItem('token', token);
+        sessionStorage.setItem('name', name);
     }
     useEffect(()=>{
         setToken(sessionStorage.getItem('token'));
