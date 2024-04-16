@@ -39,13 +39,13 @@ export default function signup() {
 
     function handleSignUp(e){
         e.preventDefault();
-        // if(name.length <=0 || email.length <= 0 || password.length <= 0){
-        //     alert('please enter all the details')
-        //     return;
-        // }
-        // if(name.length < 5){
-        //     alert('name cannot be less than 5 characters')
-        // }
+        if(name.length <=0 || email.length <= 0 || password.length <= 0){
+            alert('please enter all the details')
+            return;
+        }
+        if(name.length < 5){
+            alert('name cannot be less than 5 characters')
+        }
         //all validations to the things
 
         //api call
@@ -61,7 +61,7 @@ export default function signup() {
             <label htmlFor="">Email</label>
             <input type="text" name='email' value={email} onChange={(e)=> setEmail(e.target.value)}/>
             <label htmlFor="">Password</label>
-            <input type="password" name='password'value={password} onChange={(e)=> setPassword(e.target.value)} />
+            <input type="password" name='password' value={password} onChange={(e)=> setPassword(e.target.value)} />
             <button type='submit'>Sign Up</button>
             <p>Already have an account?</p>
             <Link href='/login'><button>SignIn</button></Link>

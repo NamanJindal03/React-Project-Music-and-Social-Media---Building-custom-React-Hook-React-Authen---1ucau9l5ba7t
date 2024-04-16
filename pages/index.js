@@ -5,10 +5,12 @@ import styles from '@/styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
+import MusicList from '@/components/HomeComponents/MusicList'
+
 export default function Home() {
   return (
     <>
-      music
+      <MusicList />
     </>
   )
 }
