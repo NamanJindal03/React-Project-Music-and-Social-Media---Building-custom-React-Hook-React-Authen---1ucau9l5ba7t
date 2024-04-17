@@ -1,3 +1,4 @@
+import 'react-h5-audio-player/lib/styles.css';
 import '@/styles/globals.css'
 import { AuthProvider } from '@/context/AuthContext'
 import { MusicProvider, useMusic } from '@/context/MusicContext'

@@ -3,10 +3,10 @@ import { useMusic } from '@/context/MusicContext'
 import { useAuth } from '@/context/AuthContext';
 
 import AudioPlayer from 'react-h5-audio-player';
-import 'react-h5-audio-player/lib/styles.css';
 
 
 import css from '@/styles/MusicPlayer.module.css'
+
 
 
 export default function MusicPlayer() {
@@ -16,8 +16,8 @@ export default function MusicPlayer() {
   if(!isMusicSet) return null;
   return (
     <>
-        <div className='flex'>
-            <div className='musicImgBox'>
+        <div className={`${css.musicPlayer} flex`} >
+            <div className={`${css.musicImgBox}`}>
                 <img src={currentMusicInfo.thumbnail} />
             </div>
             <div className={`${css.musicData} flex`} >

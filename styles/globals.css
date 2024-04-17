@@ -109,3 +109,7 @@ a {
 .flex{
   display: flex;
 }
+
+.rhap_main{
+  flex-direction: row;
+}
