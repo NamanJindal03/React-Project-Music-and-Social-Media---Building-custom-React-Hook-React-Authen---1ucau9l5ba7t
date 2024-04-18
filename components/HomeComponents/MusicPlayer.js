@@ -7,7 +7,25 @@ import AudioPlayer from 'react-h5-audio-player';
 import css from '@/styles/MusicPlayer.module.css'
 export default function MusicPlayer() {
   const {isMusicSet, currentMusicInfo} = useMusic();
+  console.log(currentMusicInfo);
   const {token} = useAuth();
+
+    function toggleSongFavourite(){
+        const favouriteMusicList = JSON.parse(localStorage.getItem('favMusic')) || [];
+        console.log(favouriteMusicList);
+        const isMusicPresent = favouriteMusicList.filter((song)=>{
+            return song._id === currentMusicInfo._id
+        })
+        if(isMusicPresent.length > 0){
+            const updatedSongs = favouriteMusicList.filter((song)=>{
+                return song._id !== currentMusicInfo._id
+            })
+            localStorage.setItem('favMusic', JSON.stringify(updatedSongs));
+            return;
+        }
+        favouriteMusicList.push(currentMusicInfo);
+        localStorage.setItem('favMusic', JSON.stringify(favouriteMusicList));
+    }
 
   if(!isMusicSet) return null;
   return (
@@ -34,7 +52,7 @@ export default function MusicPlayer() {
                     onPlay={e => console.log("onPlay")}
                     // other props here
                 />
-                <div>Like Icon</div>
+                <div onClick={toggleSongFavourite}>Like Icon</div>
             </>
             }
             

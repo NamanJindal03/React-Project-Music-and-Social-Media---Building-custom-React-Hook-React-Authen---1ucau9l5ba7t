@@ -16,11 +16,14 @@ export const AuthProvider = ({children})=>{
         setToken(token);
         setName(name);
         sessionStorage.setItem('token', token);
-        sessionStorage.setItem('name', name);
+        sessionStorage.setItem('loggedInUser', name);
     }
     useEffect(()=>{
+        console.log('callllllll')
         setToken(sessionStorage.getItem('token'));
-        setName(sessionStorage.getItem('loggedInUser'))
+        setName(sessionStorage.getItem('loggedInUser'));
+        console.log(sessionStorage.getItem('token'))
+        console.log(sessionStorage.getItem('loggedInUser'))
     },[])
 
     return(

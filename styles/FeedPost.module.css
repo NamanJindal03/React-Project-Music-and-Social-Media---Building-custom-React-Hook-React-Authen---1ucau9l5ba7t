@@ -9,7 +9,7 @@
     justify-content: space-between;
 }
 .postHeadContent{
-    justify-content: center;
+    align-items: center;
     row-gap: 0.4rem;
 }
 .postBody{
@@ -18,8 +18,8 @@
 .postFoot{
     justify-content: space-between;
 }
-.rowFlexDirection{
-    flex-direction: row;
+.colFlexDirection{
+    flex-direction: column;
 }
 .liked{
     color: darkblue
