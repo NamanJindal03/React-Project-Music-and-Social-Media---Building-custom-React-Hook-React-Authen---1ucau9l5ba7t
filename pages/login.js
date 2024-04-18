@@ -22,6 +22,10 @@ export default function login() {
                 },
                 body: JSON.stringify({email, password, appType: APP_TYPE})
             });
+            if(!response.ok){
+                const data = await response.json();
+                throw new Error(data.message)
+            }
             const data = await response.json();
             setEmail('');
             setPassword('');
@@ -29,6 +33,7 @@ export default function login() {
             router.push('/')
         }
         catch(err){
+            alert(err)
             console.log(err)
         }
     }

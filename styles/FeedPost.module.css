@@ -1,0 +1,32 @@
+.postContainer{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.2rem;
+    border: 1px solid white;
+}
+.postHead{
+    justify-content: space-between;
+}
+.postHeadContent{
+    justify-content: center;
+    row-gap: 0.4rem;
+}
+.postBody{
+    justify-content: center;
+}
+.postFoot{
+    justify-content: space-between;
+}
+.rowFlexDirection{
+    flex-direction: row;
+}
+.liked{
+    color: darkblue
+}
+.imgBox{
+    height: 60px;
+}
+.imgBox > img{
+    height: inherit;
+}

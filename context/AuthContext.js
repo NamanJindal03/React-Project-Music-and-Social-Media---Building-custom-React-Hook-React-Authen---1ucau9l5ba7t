@@ -12,6 +12,7 @@ export const AuthProvider = ({children})=>{
     }
 
     function login(token, name){
+        console.log('login called')
         setToken(token);
         setName(name);
         sessionStorage.setItem('token', token);
