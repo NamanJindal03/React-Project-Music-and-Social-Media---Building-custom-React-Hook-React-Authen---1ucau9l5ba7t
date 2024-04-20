@@ -1,8 +1,11 @@
 import React, {useState} from 'react'
+import Image from 'next/image.js';
 import css from '@/styles/FeedPost.module.css'
 import constants from '../../constants.js';
 import { useAuth } from '@/context/AuthContext.js';
 import FeedComment from './FeedComment.js';
+import defaultImage from '../../public/assets/images/download.jpg'
+
 const {BASE_API_PATH, PROJECT_ID, APP_TYPE} = constants;
 
 
@@ -55,7 +58,7 @@ export default function FeedPost({post, getPostsFeed}) {
     <div className={`${css.postContainer}`}>
         <div className={`flex ${css.postHead} `}>
             <div className={`${css.imgBox}`}>
-                <img src={profileImage} alt="" />
+                <Image src={profileImage || defaultImage} alt="" width={"64"} height={"64"}/>
             </div>
             <div className={`flex ${css.postHeadContent} ${css.colFlexDirection}`}>
                 <div>{title}</div>
