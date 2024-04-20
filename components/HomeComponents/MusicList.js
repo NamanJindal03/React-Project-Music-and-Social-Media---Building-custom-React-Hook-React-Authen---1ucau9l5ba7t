@@ -67,7 +67,7 @@ export default function MusicList() {
 
 
   return (
-    <>
+    <div className='musicListContainer'>
       {musicList.map((musicInfo)=>{
         return (
           <Card 
@@ -78,6 +78,6 @@ export default function MusicList() {
           />
         )
       })}
-    </>
+    </div>
   )
 }

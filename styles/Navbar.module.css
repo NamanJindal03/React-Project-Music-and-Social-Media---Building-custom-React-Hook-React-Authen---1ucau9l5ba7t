@@ -9,6 +9,8 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     font-size: 1.25rem;
+    position: fixed;
+    width: 100%;
 }
 
 .nav > ul{
