@@ -2,6 +2,9 @@ import React from 'react'
 import { useMusic } from '@/context/MusicContext'
 import { useAuth } from '@/context/AuthContext';
 import Link from 'next/link';
+import constants from '@/constants';
+
+const {FAVOURITE_MUSIC_LOCAL_STORAGE_KEY} = constants;
 
 import AudioPlayer from 'react-h5-audio-player';
 import css from '@/styles/MusicPlayer.module.css'
@@ -11,7 +14,7 @@ export default function MusicPlayer() {
   const {token} = useAuth();
 
     function toggleSongFavourite(){
-        const favouriteMusicList = JSON.parse(localStorage.getItem('favMusic')) || [];
+        const favouriteMusicList = JSON.parse(localStorage.getItem(FAVOURITE_MUSIC_LOCAL_STORAGE_KEY)) || [];
         console.log(favouriteMusicList);
         const isMusicPresent = favouriteMusicList.filter((song)=>{
             return song._id === currentMusicInfo._id
@@ -20,11 +23,11 @@ export default function MusicPlayer() {
             const updatedSongs = favouriteMusicList.filter((song)=>{
                 return song._id !== currentMusicInfo._id
             })
-            localStorage.setItem('favMusic', JSON.stringify(updatedSongs));
+            localStorage.setItem(FAVOURITE_MUSIC_LOCAL_STORAGE_KEY, JSON.stringify(updatedSongs));
             return;
         }
         favouriteMusicList.push(currentMusicInfo);
-        localStorage.setItem('favMusic', JSON.stringify(favouriteMusicList));
+        localStorage.setItem(FAVOURITE_MUSIC_LOCAL_STORAGE_KEY, JSON.stringify(favouriteMusicList));
     }
 
   if(!isMusicSet) return null;
